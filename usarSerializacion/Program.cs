@@ -23,10 +23,23 @@ namespace usarSerializacion
                 Directory.CreateDirectory(folderTemporal);
             }
             // Escribimos las lineas del arreglo en el archivo.
-            using (StreamWriter outputFile = new StreamWriter(folderTemporal + @"\ArchivoLineas.txt"))
+            try
             {
-                foreach (string linea in lineas)
-                    outputFile.WriteLine(linea);
+                using (StreamWriter outputFile = new StreamWriter(folderTemporal + @"\ArchivoLineas.txt"))
+                {
+                    foreach (string linea in lineas)
+                        outputFile.WriteLine(linea);
+                }
+                Console.WriteLine("Los datos han sido almacenados en:\n \t"+folderTemporal);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al almacenar los datos.\n"+e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Presione una tecla para terminar");
+                Console.ReadKey();
             }
         }
     }
