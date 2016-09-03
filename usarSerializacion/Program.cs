@@ -18,6 +18,10 @@ namespace usarSerializacion
             string rutaEscritorio =
                 Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string folderTemporal = Path.Combine(rutaEscritorio, "temporal");
+            if (!Directory.Exists(folderTemporal))
+            {
+                Directory.CreateDirectory(folderTemporal);
+            }
             // Escribimos las lineas del arreglo en el archivo.
             using (StreamWriter outputFile = new StreamWriter(folderTemporal + @"\ArchivoLineas.txt"))
             {
