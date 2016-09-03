@@ -25,10 +25,10 @@ namespace usarSerializacion
             // Escribimos las lineas del arreglo en el archivo.
             try
             {
-                using (StreamWriter outputFile = new StreamWriter(folderTemporal + @"\ArchivoLineas.txt"))
+                using (StreamWriter archivo = new StreamWriter(folderTemporal + @"\ArchivoLineas.txt"))
                 {
                     foreach (string linea in lineas)
-                        outputFile.WriteLine(linea);
+                        archivo.WriteLine(linea);
                 }
                 Console.WriteLine("Los datos han sido almacenados en:\n \t"+folderTemporal);
             }
@@ -40,6 +40,9 @@ namespace usarSerializacion
             {
                 Console.WriteLine("Presione una tecla para terminar");
                 Console.ReadKey();
+                //Console.Clear();
+
+               // serializarBinario.main();
             }
         }
     }
