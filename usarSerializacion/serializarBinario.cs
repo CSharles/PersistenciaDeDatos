@@ -41,7 +41,7 @@ namespace usarSerializacion
 
         private static void DeserializarDatos(string ruta, Dictionary<int, string> hotel)
         {
-            using (FileStream fs = new FileStream(ruta+"hoteldata.bin", FileMode.Open))
+            using (FileStream fs = new FileStream(ruta+@"\hoteldata.bin", FileMode.Open))
             {
                 // Creación de instancia de BinaryFormatter para deserializar:
                 BinaryFormatter bf = new BinaryFormatter();
@@ -61,7 +61,7 @@ namespace usarSerializacion
         private static void SerializarDatos(string ruta, Dictionary<int,string> hotel)
         {
             // Creación de un flujo para escritura de los elementos del hashtable:
-            using (FileStream fs = new FileStream(ruta +"hoteldata.bin",FileMode.Append))
+            using (FileStream fs = new FileStream(ruta +@"\hoteldata.bin",FileMode.Append))
             {
                 // Creación instancia BinaryFormatter para serializar el diccionario.
                 BinaryFormatter bf = new BinaryFormatter();
