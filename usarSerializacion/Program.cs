@@ -40,9 +40,9 @@ namespace usarSerializacion
             {
                 Console.WriteLine("Presione una tecla para terminar");
                 Console.ReadKey();
-                //Console.Clear();
+                Console.Clear();
 
-               // serializarBinario.main();
+                serializarBinario.main();
             }
         }
     }
